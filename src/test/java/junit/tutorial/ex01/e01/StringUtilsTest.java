@@ -31,18 +31,21 @@ class StringUtilsTest {
 	void test01() {
 		String result = StringUtils.toSnakeCase("aaa");
 		assertEquals("aaa", result,"toSnakeCase(\"aaa\")失敗");
+		System.out.println(result);
 	}
 	
 	@Test
 	void test02() {
 		String result = StringUtils.toSnakeCase("HelloWorld");
 		assertEquals("hello_world", result,"toSnakeCase(\"HelloWorld\")失敗");
+		System.out.println(result);
 	}
 	
 	@Test
 	void test03() {
 		String result = StringUtils.toSnakeCase("practiceJunit");
 		assertEquals("practice_junit", result,"toSnakeCase(\"practiceJunit\")失敗");
+		System.out.println(result);
 	}
 
 }

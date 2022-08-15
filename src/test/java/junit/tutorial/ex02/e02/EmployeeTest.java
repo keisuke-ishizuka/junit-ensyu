@@ -1,7 +1,12 @@
 package junit.tutorial.ex02.e02;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
@@ -30,8 +35,23 @@ class EmployeeTest {
 
 	@Test
 	void test() {
-		
-		List<Employee> employeeList;
+		try {
+			InputStream input
+				= new FileInputStream
+				("/Users/keisuke_ishizuka/"
+				+ "spring-workspace/junit-ensyu/"
+				+ "src/main/java/junit/tutorial/"
+				+ "ex02/e02/Employee.txt");
+			List<Employee> employeeList = Employee.load(input);
+			System.out.println(employeeList);
+//			assertAll(
+//					() -> assertEquals("Ichiro", employeeList.get(0)),
+//					() -> assertEquals("Tanaka", employeeList.get(1)),
+//					() -> assertEquals("ichiro@example.com", employeeList.get(2))
+//					);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 }

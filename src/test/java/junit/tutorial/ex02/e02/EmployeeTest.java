@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
@@ -43,12 +42,11 @@ class EmployeeTest {
 				+ "src/main/java/junit/tutorial/"
 				+ "ex02/e02/Employee.txt");
 			List<Employee> employeeList = Employee.load(input);
-			System.out.println(employeeList);
-//			assertAll(
-//					() -> assertEquals("Ichiro", employeeList.get(0)),
-//					() -> assertEquals("Tanaka", employeeList.get(1)),
-//					() -> assertEquals("ichiro@example.com", employeeList.get(2))
-//					);
+			assertAll(
+					() -> assertEquals("Ichiro", employeeList.get(0).getFirstName()),
+					() -> assertEquals("Tanaka", employeeList.get(0).getLastName()),
+					() -> assertEquals("ichiro@example.com", employeeList.get(0).getEmail())
+					);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -16,6 +16,7 @@ public class LogAnalyzer {
 		}
 	}
 	
+	
 	private Object doAnalyze(Map<String, String> rawData) {
 		// 仮実装
 		return new Object();

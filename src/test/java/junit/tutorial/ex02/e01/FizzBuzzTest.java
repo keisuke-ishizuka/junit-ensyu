@@ -35,8 +35,8 @@ class FizzBuzzTest {
 	@Test
 	void test() {
 		List<String> result = fizzBuzz.createFizzBuzzList(16);
-		assertIterableEquals(result, result);
-		System.out.println(result);
+		List<String> result2 = fizzBuzz.createFizzBuzzList(16);
+		assertIterableEquals(result, result2);
+		System.out.println(result2);
 	}
-
 }
